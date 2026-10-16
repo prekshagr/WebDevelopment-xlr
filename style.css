@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff, #fce7f3);
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.navbar {
+    background: linear-gradient(90deg, #1e3a8a, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* CARDS */
+.card {
+    background-color: white;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
+    border-top: 5px solid #7c3aed;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(124, 58, 237, 0.25);
+}
+
+h1 {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 36px;
+}
+
+h2 {
+    color: #7c3aed;
+    margin-bottom: 18px;
+    padding-left: 12px;
+    border-left: 6px solid #7c3aed;
+}
+
+h3 {
+    color: #7c3aed;
+    margin: 25px 0 5px;
+    padding-bottom: 4px;
+    border-bottom: 2px dashed #ddd6fe;
+}
+
+a {
+    color: #7c3aed;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FORM */
+label {
+    display: block;
+    margin-top: 14px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border: 2px solid #c7d2fe;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #f8fafc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+    background-color: white;
+}
+
+.edu-row {
+    margin-top: 14px;
+    padding: 12px;
+    background-color: #f5f3ff;
+    border-radius: 12px;
+}
+
+.edu-row strong {
+    color: #1e3a8a;
+}
+
+/* BUTTONS */
+button {
+    margin: 25px 10px 0 0;
+    padding: 11px 28px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #1e3a8a, #7c3aed);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(124, 58, 237, 0.4);
+}
+
+button[type="reset"] {
+    background: #6b7280;
+}
+
+/* PHOTO (centered) */
+.photo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 20px;
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 0 0 4px #7c3aed, 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.placeholder {
+    background: linear-gradient(135deg, #e0e7ff, #ddd6fe);
+    color: #6d28d9;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 9px 24px;
+    background: linear-gradient(90deg, #1e3a8a, #7c3aed);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+.upload-btn:hover {
+    transform: scale(1.05);
+}
+
+/* OUTPUT PROFILE */
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.profile-top p {
+    margin-top: 8px;
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd6fe;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ede9fe;
+}
+
+.details-table th {
+    background-color: #ede9fe;
+    color: #1e3a8a;
+    width: 30%;
+}
+
+.edu-table th {
+    background: linear-gradient(90deg, #1e3a8a, #7c3aed);
+    color: white;
+}
+
+.edu-table tr:nth-child(even) td {
+    background-color: #f5f3ff;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags li {
+    background: linear-gradient(90deg, #ede9fe, #fce7f3);
+    color: #5b21b6;
+    padding: 7px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#outProjects {
+    margin-left: 20px;
+}
+
+#outProjects li {
+    margin-bottom: 6px;
+}
+
+.actions {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background: linear-gradient(90deg, #1e3a8a, #7c3aed);
+    color: white;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .profile-top {
+        justify-content: center;
+        text-align: center;
+    }
+    .card {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+}
+
+@media print {
+    .navbar, .actions, footer {
+        display: none;
+    }
+    body {
+        background: white;
+    }
+    .card {
+        box-shadow: none;
+    }
+}
+
+.photo-title {
+    font-weight: bold;
+    color: #1e3a8a;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.navbar h2 {
+    color: white;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+/* 3 PAGE FORM */
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.dot.active {
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+    color: white;
+}
+
+.line {
+    width: 60px;
+    height: 4px;
+    background-color: #e5e7eb;
+}
+
+button.backBtn {
+    background: #6b7280;
+}
+
+#submitMsg {
+    margin-top: 20px;
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}

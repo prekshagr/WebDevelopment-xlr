@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h2>Student Profile Website</h2>
+    </header>
+
+    <!-- INPUT FORM (3 PAGES) -->
+    <section id="formSection" class="card">
+        <h2>Enter Your Details</h2>
+
+        <div class="steps">
+            <span class="dot active">1</span><span class="line"></span>
+            <span class="dot">2</span><span class="line"></span>
+            <span class="dot">3</span>
+        </div>
+
+        <form id="profileForm">
+
+            <!-- PAGE 1 -->
+            <div class="step active">
+                <h3>Page 1: Profile and Contact</h3>
+
+                <div class="photo-box">
+                    <p class="photo-title">Profile Photo</p>
+                    <img id="preview" class="profile-photo" style="display:none;" alt="Preview">
+                    <div id="placeholder" class="profile-photo placeholder">Photo</div>
+                    <label for="photo" class="upload-btn">Upload Profile Photo</label>
+                    <input type="file" id="photo" accept="image/*" hidden>
+                </div>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+
+                <label for="about">About Me:</label>
+                <textarea id="about" rows="3" required></textarea>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address">
+
+                <label for="linkedin">LinkedIn Link:</label>
+                <input type="url" id="linkedin" placeholder="https://">
+
+                <label for="github">GitHub Link:</label>
+                <input type="url" id="github" placeholder="https://">
+
+                <button type="button" class="nextBtn">Next</button>
+            </div>
+
+            <!-- PAGE 2 -->
+            <div class="step">
+                <h3>Page 2: Education</h3>
+
+                <div class="edu-row">
+                    <strong>B.E. / Degree</strong>
+                    <input type="text" id="deg_inst" placeholder="College name">
+                    <input type="text" id="deg_year" placeholder="Year (2025 - 2029)">
+                    <input type="text" id="deg_score" placeholder="CGPA / %">
+                </div>
+                <div class="edu-row">
+                    <strong>PUC / 12th</strong>
+                    <input type="text" id="puc_inst" placeholder="College name">
+                    <input type="text" id="puc_year" placeholder="Year">
+                    <input type="text" id="puc_score" placeholder="Percentage">
+                </div>
+                <div class="edu-row">
+                    <strong>SSLC / 10th</strong>
+                    <input type="text" id="sslc_inst" placeholder="School name">
+                    <input type="text" id="sslc_year" placeholder="Year">
+                    <input type="text" id="sslc_score" placeholder="Percentage">
+                </div>
+
+                <button type="button" class="backBtn">Back</button>
+                <button type="button" class="nextBtn">Next</button>
+            </div>
+
+            <!-- PAGE 3 -->
+            <div class="step">
+                <h3>Page 3: Skills and Others</h3>
+
+                <label for="skills">Skills (separate with commas):</label>
+                <input type="text" id="skills" placeholder="HTML, CSS, Python">
+
+                <label for="projects">Projects (one per line):</label>
+                <textarea id="projects" rows="3"></textarea>
+
+                <label for="hobbies">Hobbies (separate with commas):</label>
+                <input type="text" id="hobbies" placeholder="Reading, Music">
+
+                <button type="button" class="backBtn">Back</button>
+                <button type="submit">Create Profile</button>
+                <button type="reset" id="resetBtn">Reset</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- PROFILE OUTPUT -->
+    <div id="profileView" style="display:none;">
+
+        <section class="card">
+            <div class="profile-top">
+                <img id="outPhoto" class="profile-photo" alt="Profile Photo">
+                <div>
+                    <h1 id="outName"></h1>
+                    <p id="outAbout"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Personal Details</h2>
+            <table class="details-table">
+                <tr><th>Full Name</th><td id="tName"></td></tr>
+                <tr><th>Date of Birth</th><td id="tDob"></td></tr>
+                <tr><th>Address</th><td id="tAddress"></td></tr>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Education</h2>
+            <table class="edu-table">
+                <thead>
+                    <tr><th>Course</th><th>Institution</th><th>Year</th><th>Score</th></tr>
+                </thead>
+                <tbody id="eduBody"></tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Skills</h2>
+            <ul class="tags" id="outSkills"></ul>
+        </section>
+
+        <section class="card">
+            <h2>Projects</h2>
+            <ul id="outProjects"></ul>
+            <h3>Hobbies</h3>
+            <ul class="tags" id="outHobbies"></ul>
+        </section>
+
+        <section class="card">
+            <h2>Contact Details</h2>
+            <table class="details-table">
+                <tr><th>Email</th><td><a id="outEmail"></a></td></tr>
+                <tr><th>Phone</th><td id="outPhone"></td></tr>
+                <tr><th>LinkedIn</th><td><a id="outLinkedin" target="_blank"></a></td></tr>
+                <tr><th>GitHub</th><td><a id="outGithub" target="_blank"></a></td></tr>
+            </table>
+        </section>
+
+        <div class="actions">
+            <button id="editBtn">Edit Details</button>
+            <button id="submitBtn">Submit</button>
+<p id="submitMsg"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Student Profile Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
